@@ -72,6 +72,7 @@ public class FlinkKafkaTable {
         Properties properties = new Properties();
         properties.setProperty("bootstrap.servers", params.getRequired("bootstrap.servers"));
         properties.setProperty("sasl.kerberos.service.name", "kafka");
+        properties.setProperty("security.protocol", "SASL_SSL");
         properties.setProperty("ssl.truststore.location", "/usr/lib/jvm/java-1.8.0/jre/lib/security/cacerts");
         //properties.setProperty("ssl.truststore.location", "./src/main/resources/truststore.jks");
         properties.setProperty("security.protocol", "PLAIN");
@@ -80,6 +81,7 @@ public class FlinkKafkaTable {
         Properties properties_producer = new Properties();
         properties_producer.setProperty("bootstrap.servers", params.getRequired("bootstrap.servers"));
         properties_producer.setProperty("sasl.kerberos.service.name", "kafka");
+        properties.setProperty("security.protocol", "SASL_SSL");
         properties_producer.setProperty("ssl.truststore.location", "/usr/lib/jvm/java-1.8.0/jre/lib/security/cacerts");
         //properties.setProperty("ssl.truststore.location", "./src/main/resources/truststore.jks");
         properties_producer.setProperty("security.protocol", "PLAIN");
